@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | CoolFix Fridge Repairs</title>
+<meta name="description" content="Learn more about CoolFix Fridge Repairs, our approach to customer service and our commitment to practical refrigeration repair solutions.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --navy: #10283f;
+    --blue: #087fc4;
+    --light-blue: #eaf6fc;
+    --white: #ffffff;
+    --grey: #64748b;
+    --dark: #1e293b;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.7;
+    color: var(--dark);
+    background: #f8fafc;
+}
+
+/* NAVIGATION */
+nav {
+    background: var(--white);
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--navy);
+    text-decoration: none;
+}
+
+.logo span { color: var(--blue); }
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: var(--blue); }
+
+.nav-links .nav-btn {
+    background: var(--blue);
+    color: white;
+    padding: 11px 22px;
+    border-radius: 6px;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(110deg, rgba(9,32,55,0.96), rgba(5,112,177,0.83)),
+                linear-gradient(135deg, #10283f, #087fc4);
+    color: white;
+    padding: 105px 7%;
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content { max-width: 760px; }
+
+.hero-label {
+    display: inline-block;
+    background: rgba(255,255,255,0.13);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 22px;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 60px);
+    line-height: 1.15;
+    margin-bottom: 22px;
+}
+
+.hero h1 span { color: #74d5ff; }
+
+.hero p {
+    font-size: 18px;
+    color: #dcecf7;
+    max-width: 620px;
+    margin-bottom: 28px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--blue);
+    color: white;
+    padding: 14px 28px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 6px;
+    transition: 0.3s;
+    border: 2px solid var(--blue);
+}
+
+.btn:hover {
+    background: #05669f;
+    border-color: #05669f;
+    transform: translateY(-2px);
+}
+
+/* TRUST BAR */
+.trust-bar {
+    background: white;
+    padding: 24px 7%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 45px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+}
+
+.trust-item {
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 15px;
+}
+
+.trust-item span {
+    color: var(--blue);
+    margin-right: 8px;
+}
+
+/* SECTIONS */
+section { padding: 85px 7%; }
+
+.section-heading {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 48px;
+}
+
+.section-heading small,
+.eyebrow {
+    color: var(--blue);
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size: 36px;
+    color: var(--navy);
+    margin: 10px 0;
+}
+
+.section-heading p { color: var(--grey); }
+
+/* STORY */
+.story-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.story-copy h2 {
+    font-size: 36px;
+    color: var(--navy);
+    line-height: 1.25;
+    margin: 12px 0 20px;
+}
+
+.story-copy p {
+    color: var(--grey);
+    margin-bottom: 17px;
+}
+
+.story-visual {
+    min-height: 340px;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #10283f, #087fc4);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 35px;
+    box-shadow: 0 12px 30px rgba(16,40,63,0.13);
+}
+
+.story-visual .snowflake {
+    font-size: 78px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.story-visual h3 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.story-visual p {
+    color: #dcecf7;
+    max-width: 300px;
+}
+
+/* VALUES */
+.values-section { background: var(--light-blue); }
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.value-card {
+    background: white;
+    padding: 32px 26px;
+    border-radius: 12px;
+    border: 1px solid #edf1f5;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.04);
+    transition: 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.value-icon {
+    width: 58px;
+    height: 58px;
+    background: var(--light-blue);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.value-card h3 {
+    color: var(--navy);
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.value-card p {
+    color: var(--grey);
+    font-size: 15px;
+}
+
+/* SERVICES SUMMARY */
+.services-summary {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 35px;
+}
+
+.service-point {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 18px;
+    background: white;
+    border: 1px solid #edf1f5;
+    border-radius: 9px;
+}
+
+.service-point span {
+    color: var(--blue);
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.service-point h3 {
+    color: var(--navy);
+    font-size: 17px;
+    margin-bottom: 3px;
+}
+
+.service-point p {
+    color: var(--grey);
+    font-size: 14px;
+}
+
+/* CTA */
+.contact-section {
+    background: var(--navy);
+    color: white;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.contact-section > p {
+    color: #cbddeb;
+    margin: 0 auto 30px;
+    max-width: 650px;
+}
+
+/* FOOTER */
+footer {
+    background: #091d30;
+    color: #a9bdce;
+    padding: 25px 7%;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer strong { color: white; }
+
+/* MOBILE */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .nav-links {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a { font-size: 13px; }
+    .hero { padding: 75px 7%; min-height: auto; }
+    .hero h1 { font-size: 39px; }
+    .hero p { font-size: 16px; }
+    section { padding: 65px 6%; }
+    .section-heading h2,
+    .story-copy h2 { font-size: 29px; }
+    .story-container { grid-template-columns: 1fr; gap: 30px; }
+    .services-summary { grid-template-columns: 1fr; }
+    .contact-section h2 { font-size: 30px; }
+}
+</style>
+</head>
+
+<body>
+<nav>
+    <a class="logo" href="index.html">❄ Cool<span>Fix</span></a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="about-us.html" class="active">About Us</a>
+        <a href="our-staff.html">Our Staff</a>
+        <a href="index.html#faq">FAQs</a>
+        <a href="index.html#contact" class="nav-btn">Contact Us</a>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="hero-content">
+        <div class="hero-label">GET TO KNOW COOLFIX</div>
+        <h1>About CoolFix.<br><span>Keeping Things Cool.</span></h1>
+        <p>We help homes and businesses get their refrigeration back on track with practical repair solutions, clear communication and friendly service.</p>
+        <a href="index.html#contact" class="btn">Get In Touch →</a>
+    </div>
+</header>
+
+<div class="trust-bar">
+    <div class="trust-item"><span>✓</span> Domestic Repairs</div>
+    <div class="trust-item"><span>✓</span> Commercial Repairs</div>
+    <div class="trust-item"><span>✓</span> Clear Communication</div>
+    <div class="trust-item"><span>✓</span> Friendly Service</div>
+</div>
+
+<section>
+    <div class="story-container">
+        <div class="story-copy">
+            <small class="eyebrow">WHO WE ARE</small>
+            <h2>Making Fridge Repairs Simple and Straightforward</h2>
+            <p>At CoolFix Fridge Repairs, we understand how important a working refrigerator or freezer is to everyday life. When an appliance stops cooling properly, makes unusual noises or develops a fault, it can quickly become a major inconvenience.</p>
+            <p>That's why our focus is on providing helpful service and practical repair solutions for both households and businesses. We aim to make the repair process easier by listening to your concerns, explaining the next steps and helping you understand your options.</p>
+            <p>Whether you need help with a household fridge, a freezer or commercial refrigeration equipment, CoolFix is here to help you make an informed repair enquiry.</p>
+        </div>
+        <div class="story-visual">
+            <div class="snowflake">❄️</div>
+            <h3>Keeping Life Cool</h3>
+            <p>Reliable refrigeration support for homes and businesses.</p>
+        </div>
+    </div>
+</section>
+
+<section class="values-section">
+    <div class="section-heading">
+        <small>WHAT MATTERS TO US</small>
+        <h2>Our Values</h2>
+        <p>The principles that guide the way we work with customers and approach every repair enquiry.</p>
+    </div>
+
+    <div class="values-grid">
+        <article class="value-card">
+            <div class="value-icon">🤝</div>
+            <h3>Friendly Service</h3>
+            <p>We aim to make every customer feel welcome, listened to and supported throughout the repair process.</p>
+        </article>
+
+        <article class="value-card">
+            <div class="value-icon">💬</div>
+            <h3>Clear Communication</h3>
+            <p>We believe in explaining appliance issues and repair options in a straightforward, easy-to-understand way.</p>
+        </article>
+
+        <article class="value-card">
+            <div class="value-icon">🔧</div>
+            <h3>Practical Solutions</h3>
+            <p>We focus on understanding the problem and recommending suitable next steps for your refrigeration needs.</p>
+        </article>
+
+        <article class="value-card">
+            <div class="value-icon">⭐</div>
+            <h3>Customer Focus</h3>
+            <p>Your time and needs matter. We aim to provide a helpful, respectful and professional experience.</p>
+        </article>
+    </div>
+</section>
+
+<section>
+    <div class="section-heading">
+        <small>HOW WE CAN HELP</small>
+        <h2>Refrigeration Services for Every Setting</h2>
+        <p>CoolFix handles enquiries for a range of refrigerator and freezer problems in homes and commercial workplaces.</p>
+    </div>
+
+    <div class="services-summary">
+        <div class="service-point">
+            <span>✓</span>
+            <div>
+                <h3>Domestic Refrigerators</h3>
+                <p>Support for household fridges experiencing cooling issues, unusual noises or component faults.</p>
+            </div>
+        </div>
+
+        <div class="service-point">
+            <span>✓</span>
+            <div>
+                <h3>Commercial Refrigeration</h3>
+                <p>Repair enquiries for refrigeration equipment used by cafés, restaurants, shops and businesses.</p>
+            </div>
+        </div>
+
+        <div class="service-point">
+            <span>✓</span>
+            <div>
+                <h3>Freezer Repairs</h3>
+                <p>Assistance with temperature problems, frost build-up, leaks and other freezer faults.</p>
+            </div>
+        </div>
+
+        <div class="service-point">
+            <span>✓</span>
+            <div>
+                <h3>Fault Diagnosis</h3>
+                <p>Identifying possible causes of appliance problems and discussing suitable repair options.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-section">
+    <h2>Let's Get Your Fridge Back on Track</h2>
+    <p>Have a question or need help with a refrigerator or freezer? Contact CoolFix Fridge Repairs and tell us what's happening.</p>
+    <a href="index.html#contact" class="btn">Contact CoolFix →</a>
+</section>
+
+<footer>
+    <p><strong>❄ CoolFix Fridge Repairs</strong></p>
+    <p>Professional Refrigerator &amp; Freezer Repair Services</p>
+    <p style="margin-top:12px;">© 2026 CoolFix Fridge Repairs. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
