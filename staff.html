@@ -1,0 +1,459 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Staff | CoolFix Fridge Repairs</title>
+<meta name="description" content="Meet the team behind CoolFix Fridge Repairs. Friendly support and professional refrigerator and freezer repair services.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --navy: #10283f;
+    --blue: #087fc4;
+    --light-blue: #eaf6fc;
+    --white: #ffffff;
+    --grey: #64748b;
+    --dark: #1e293b;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.7;
+    color: var(--dark);
+    background: #f8fafc;
+}
+
+/* NAVIGATION */
+nav {
+    background: var(--white);
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--navy);
+    text-decoration: none;
+}
+
+.logo span { color: var(--blue); }
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: var(--blue); }
+
+.nav-links .nav-btn {
+    background: var(--blue);
+    color: white;
+    padding: 11px 22px;
+    border-radius: 6px;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(110deg, rgba(9,32,55,0.96), rgba(5,112,177,0.83)),
+                linear-gradient(135deg, #10283f, #087fc4);
+    color: white;
+    padding: 100px 7%;
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content { max-width: 760px; }
+
+.hero-label {
+    display: inline-block;
+    background: rgba(255,255,255,0.13);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 22px;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 60px);
+    line-height: 1.15;
+    margin-bottom: 22px;
+}
+
+.hero h1 span { color: #74d5ff; }
+
+.hero p {
+    font-size: 18px;
+    color: #dcecf7;
+    max-width: 620px;
+}
+
+/* TRUST BAR */
+.trust-bar {
+    background: white;
+    padding: 24px 7%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 45px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+}
+
+.trust-item {
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 15px;
+}
+
+.trust-item span {
+    color: var(--blue);
+    margin-right: 8px;
+}
+
+/* SECTIONS */
+section { padding: 85px 7%; }
+
+.section-heading {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 48px;
+}
+
+.section-heading small {
+    color: var(--blue);
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    font-size: 36px;
+    color: var(--navy);
+    margin: 10px 0;
+}
+
+.section-heading p { color: var(--grey); }
+
+/* STAFF */
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+    gap: 26px;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.staff-card {
+    background: white;
+    border: 1px solid #edf1f5;
+    border-radius: 13px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.staff-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.09);
+}
+
+.staff-photo {
+    min-height: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #eaf6fc, #d6edf9);
+    color: var(--blue);
+    font-size: 66px;
+}
+
+.staff-info { padding: 25px 24px 28px; }
+
+.staff-info h3 {
+    color: var(--navy);
+    font-size: 21px;
+    margin-bottom: 3px;
+}
+
+.staff-role {
+    color: var(--blue);
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.staff-info p {
+    color: var(--grey);
+    font-size: 15px;
+}
+
+/* OUR APPROACH */
+.approach {
+    background: var(--light-blue);
+}
+
+.approach-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.approach-copy h2 {
+    font-size: 36px;
+    color: var(--navy);
+    line-height: 1.25;
+    margin: 12px 0 18px;
+}
+
+.approach-copy p {
+    color: var(--grey);
+    margin-bottom: 16px;
+}
+
+.approach-points { list-style: none; margin-top: 22px; }
+
+.approach-points li {
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.approach-points span {
+    color: var(--blue);
+    margin-right: 10px;
+}
+
+.approach-box {
+    background: var(--navy);
+    color: white;
+    border-radius: 15px;
+    padding: 45px 35px;
+    text-align: center;
+}
+
+.approach-box .big-icon {
+    font-size: 65px;
+    margin-bottom: 12px;
+}
+
+.approach-box h3 {
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.approach-box p { color: #cbddeb; }
+
+/* CTA */
+.contact-section {
+    background: var(--navy);
+    color: white;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.contact-section > p {
+    color: #cbddeb;
+    margin: 0 auto 30px;
+    max-width: 650px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--blue);
+    color: white;
+    padding: 14px 28px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 6px;
+    transition: 0.3s;
+    border: 2px solid var(--blue);
+}
+
+.btn:hover {
+    background: #05669f;
+    border-color: #05669f;
+    transform: translateY(-2px);
+}
+
+/* FOOTER */
+footer {
+    background: #091d30;
+    color: #a9bdce;
+    padding: 25px 7%;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer strong { color: white; }
+
+/* MOBILE */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .nav-links {
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a { font-size: 13px; }
+    .hero { padding: 75px 7%; min-height: auto; }
+    .hero h1 { font-size: 39px; }
+    .hero p { font-size: 16px; }
+    section { padding: 65px 6%; }
+    .section-heading h2,
+    .approach-copy h2 { font-size: 29px; }
+    .approach-container { grid-template-columns: 1fr; gap: 30px; }
+    .contact-section h2 { font-size: 30px; }
+}
+</style>
+</head>
+
+<body>
+<nav>
+    <a class="logo" href="index.html">❄ Cool<span>Fix</span></a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="our-staff.html" class="active">Our Staff</a>
+        <a href="index.html#faq">FAQs</a>
+        <a href="index.html#contact" class="nav-btn">Contact Us</a>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="hero-content">
+        <div class="hero-label">THE PEOPLE BEHIND COOLFIX</div>
+        <h1>Meet the Team.<br><span>Here to Keep You Cool.</span></h1>
+        <p>Great service starts with great people. Get to know the friendly team dedicated to helping homes and businesses with their refrigeration needs.</p>
+    </div>
+</header>
+
+<div class="trust-bar">
+    <div class="trust-item"><span>✓</span> Friendly Support</div>
+    <div class="trust-item"><span>✓</span> Professional Service</div>
+    <div class="trust-item"><span>✓</span> Practical Advice</div>
+    <div class="trust-item"><span>✓</span> Customer Focused</div>
+</div>
+
+<section id="staff">
+    <div class="section-heading">
+        <small>THE COOLFIX TEAM</small>
+        <h2>People You Can Count On</h2>
+        <p>From your first enquiry to the completion of a repair, our team aims to make the process clear, helpful and straightforward.</p>
+    </div>
+
+    <div class="staff-grid">
+        <!-- Replace the sample names, roles and descriptions below with your actual staff details. -->
+        <article class="staff-card">
+            <div class="staff-photo" aria-label="Staff photo placeholder">👨‍🔧</div>
+            <div class="staff-info">
+                <h3>Team Member One</h3>
+                <div class="staff-role">Service Manager</div>
+                <p>Coordinates service enquiries and helps customers understand the next steps for their appliance repair.</p>
+            </div>
+        </article>
+
+        <article class="staff-card">
+            <div class="staff-photo" aria-label="Staff photo placeholder">🧑‍🔧</div>
+            <div class="staff-info">
+                <h3>Team Member Two</h3>
+                <div class="staff-role">Refrigeration Technician</div>
+                <p>Assesses refrigerator and freezer issues and works toward practical, reliable repair solutions.</p>
+            </div>
+        </article>
+
+        <article class="staff-card">
+            <div class="staff-photo" aria-label="Staff photo placeholder">👩‍💼</div>
+            <div class="staff-info">
+                <h3>Team Member Three</h3>
+                <div class="staff-role">Customer Support</div>
+                <p>Assists with booking enquiries, appointment details and keeping customers informed.</p>
+            </div>
+        </article>
+
+        <article class="staff-card">
+            <div class="staff-photo" aria-label="Staff photo placeholder">👨‍🔧</div>
+            <div class="staff-info">
+                <h3>Team Member Four</h3>
+                <div class="staff-role">Commercial Service Technician</div>
+                <p>Supports businesses with refrigeration service enquiries for cafés, restaurants, shops and workplaces.</p>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="approach">
+    <div class="approach-container">
+        <div class="approach-copy">
+            <small style="color:#087fc4;font-weight:800;letter-spacing:2px;">HOW WE WORK</small>
+            <h2>A Helpful Team, From Start to Finish</h2>
+            <p>We know that a fridge problem can disrupt your day. That's why we aim to make every interaction straightforward, respectful and focused on finding the right solution.</p>
+            <p>Our team values clear communication, careful assessments and treating every customer and property with respect.</p>
+            <ul class="approach-points">
+                <li><span>✓</span> We listen to understand the problem</li>
+                <li><span>✓</span> We explain the available options</li>
+                <li><span>✓</span> We keep communication clear</li>
+                <li><span>✓</span> We focus on practical solutions</li>
+            </ul>
+        </div>
+        <div class="approach-box">
+            <div class="big-icon">❄️</div>
+            <h3>Here When You Need a Hand</h3>
+            <p>Whether it's a household fridge or business refrigeration, contact CoolFix and let our team know how we can help.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact-section" id="contact">
+    <h2>Need Help With Your Fridge?</h2>
+    <p>Our team is ready to hear about your refrigerator or freezer repair requirements. Get in touch to make an enquiry.</p>
+    <a href="mailto:info@coolfixrepairs.com?subject=Fridge%20Repair%20Enquiry" class="btn">Contact the CoolFix Team →</a>
+</section>
+
+<footer>
+    <p><strong>❄ CoolFix Fridge Repairs</strong></p>
+    <p>Professional Refrigerator &amp; Freezer Repair Services</p>
+    <p style="margin-top:12px;">© 2026 CoolFix Fridge Repairs. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
